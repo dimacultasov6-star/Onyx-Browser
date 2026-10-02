@@ -1,0 +1,49 @@
+{
+  "name": "brauzer",
+  "productName": "Onyx",
+  "version": "1.0.0",
+  "description": "Onyx - быстрый современный Onyx на Chromium",
+  "main": "src/main/main.js",
+  "author": "dima",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable --x64"
+  },
+  "devDependencies": {
+    "electron": "^38.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.dima.brauzer",
+    "productName": "Onyx",
+    "copyright": "Copyright 2026 dima",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "Onyx-${version}-portable.${ext}",
+      "legalTrademarks": ""
+    },
+    "portable": {
+      "artifactName": "Onyx-${version}-portable.${ext}",
+      "unicode": true
+    },
+    "compression": "maximum",
+    "asar": true,
+    "npmRebuild": false
+  }
+}
